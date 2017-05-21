@@ -49,7 +49,7 @@ class SimpleGroupsManagement(BrowserView):
         if request.get('deleted'):
             plone_utils.addPortalMessage(_('Member(s) removed'))
         elif request.get('added'):
-            plone_utils.addPortalMessage(_(u'Member(s) added'))
+            plone_utils.addPortalMessage(_('Member(s) added'))
         if self.request.get("group_id"):
             return self.manage_group_template()
         return self.main_template()

@@ -15,14 +15,14 @@ class ISimpleGroupManagementSettings(Interface):
     """
 
     sgm_data = schema.Tuple(
-        title=_(u"Groups management proxy"),
+        title=_("Groups management proxy"),
         description=_(
             "help_sgm_data",
-            default=u"Configure which users or groups can manage which groups.\n"
-                    u"Fill the field below by providing a set of \"user_foo_id|group_bar_id\""
-                    u" (or \"group_foo_id|group_bar_id\"), one per line.\n"
-                    u"That means: the user/group on the left of the \"|\" can handle"
-                    u" group on the right."
+            default="Configure which users or groups can manage which groups.\n"
+                    "Fill the field below by providing a set of \"user_foo_id|group_bar_id\""
+                    " (or \"group_foo_id|group_bar_id\"), one per line.\n"
+                    "That means: the user/group on the left of the \"|\" can handle"
+                    " group on the right."
         ),
         required=False,
         value_type=schema.TextLine(),
@@ -31,18 +31,18 @@ class ISimpleGroupManagementSettings(Interface):
     )
 
     sgm_never_managed_groups = schema.Tuple(
-        title=_(u"Not manageable groups"),
+        title=_("Not manageable groups"),
         description=_(
             "help_gm_never_managed_groups",
-            default=u"Put here a list of groups that can't be managed by users"
+            default="Put here a list of groups that can't be managed by users"
         ),
         required=False,
         value_type=schema.TextLine(),
         default=(
-            u'Administrators',
-            u'Site Administrators',
-            u'Reviewers',
-            u'AuthenticatedUsers',
+            'Administrators',
+            'Site Administrators',
+            'Reviewers',
+            'AuthenticatedUsers',
         ),
         missing_value=(),
     )

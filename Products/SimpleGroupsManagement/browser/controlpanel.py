@@ -10,8 +10,8 @@ from z3c.form import button
 
 
 def fix_widget_style(widget):
-    widget.style = u'width: 100%'
-    widget.klass += u" autoresize"
+    widget.style = 'width: 100%'
+    widget.klass += " autoresize"
     widget.rows = 7
 
 
@@ -20,10 +20,10 @@ class SGMSettingsEditForm(controlpanel.RegistryEditForm):
     """
     schema = ISimpleGroupManagementSettings
     id = "SGMSettingsEditForm"
-    label = _(u"Groups management proxy settings")
+    label = _("Groups management proxy settings")
     description = _(
-        u"help_sgm_settings_editform",
-        default=u"Configure groups management proxy"  # noqa
+        "help_sgm_settings_editform",
+        default="Configure groups management proxy"  # noqa
     )
 
     @button.buttonAndHandler(pmf('Save'), name='save')
@@ -33,7 +33,7 @@ class SGMSettingsEditForm(controlpanel.RegistryEditForm):
             self.status = self.formErrorsMessage
             return
         changes = self.applyChanges(data)
-        IStatusMessage(self.request).addStatusMessage(_(u"Changes saved"),
+        IStatusMessage(self.request).addStatusMessage(_("Changes saved"),
                                                       "info")
         self.context.REQUEST.RESPONSE.redirect(
             "@@configure-simple-groups-management"
@@ -41,7 +41,7 @@ class SGMSettingsEditForm(controlpanel.RegistryEditForm):
 
     @button.buttonAndHandler(pmf('Cancel'), name='cancel')
     def handleCancel(self, action):
-        IStatusMessage(self.request).addStatusMessage(_(u"Edit cancelled"),
+        IStatusMessage(self.request).addStatusMessage(_("Edit cancelled"),
                                                       "info")
         self.request.response.redirect("%s/%s" % (self.context.absolute_url(),
                                                   self.control_panel_view))
